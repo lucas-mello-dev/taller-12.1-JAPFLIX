@@ -48,12 +48,9 @@ function buscarPelicula() {
             const estrellas = document.createElement("p");
             estrellas.innerHTML = convertirEstrellas(pelicula.vote_average);
 
-            const separador = document.createElement("hr");
-
             liPelicula.appendChild(tituloPelicula);
             liPelicula.appendChild(taglinePelicula);
             liPelicula.appendChild(estrellas);
-            liPelicula.appendChild(separador);
 
             liPelicula.addEventListener("click", () => mostrarDetalles(pelicula));
 
@@ -80,8 +77,7 @@ function convertirEstrellas(votos) {
 function mostrarDetalles(pelicula) {
     cuerpoOffcanvas.innerHTML = "";
 
-    const titulo = document.createElement("h2");
-    titulo.textContent = pelicula.title;
+    document.getElementById("offcanvasTopLabel").textContent = pelicula.title;
 
     const overview = document.createElement("p");
     overview.textContent = pelicula.overview;
@@ -89,7 +85,6 @@ function mostrarDetalles(pelicula) {
     const generos = document.createElement("p");
     generos.textContent = "Géneros: " + pelicula.genres.map(g => g.name).join(", ");
 
-    cuerpoOffcanvas.appendChild(titulo);
     cuerpoOffcanvas.appendChild(overview);
     cuerpoOffcanvas.appendChild(generos);
 
