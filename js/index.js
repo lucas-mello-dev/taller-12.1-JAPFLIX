@@ -83,7 +83,7 @@ function mostrarDetalles(pelicula) {
     overview.textContent = pelicula.overview;
 
     const generos = document.createElement("p");
-    generos.textContent = "Géneros: " + pelicula.genres.map(g => g.name).join(", ");
+    generos.textContent = pelicula.genres.map(g => g.name).join(" - ");
 
     cuerpoOffcanvas.appendChild(overview);
     cuerpoOffcanvas.appendChild(generos);
