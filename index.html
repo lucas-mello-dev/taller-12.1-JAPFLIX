@@ -9,7 +9,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
-  
+  <script defer src="js/index.js"></script>
 </head>
 
 <body class="bg-dark">
@@ -23,7 +23,26 @@
         </div>
       </div>
     </div>
-
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" id="cuerpoOffcanvas">
+        <div class="dropdown my-2" id="dropdownInfo">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            More
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" id="anio"></a></li>
+            <li><a class="dropdown-item" href="#" id="duracion"></a></li>
+            <li><a class="dropdown-item" href="#" id="presupuesto"></a></li>
+            <li><a class="dropdown-item" href="#" id="ganancias"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="album">
       <ul class="list-group container" id="lista">
       </ul>
@@ -40,9 +59,7 @@
       <p class="mb-1">Generado con fines estrictamente educativos.</p>
     </div>
   </footer>
-
   <script src="js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
