@@ -75,8 +75,6 @@ function convertirEstrellas(votos) {
 }
 
 function mostrarDetalles(pelicula) {
-    cuerpoOffcanvas.innerHTML = "";
-
     document.getElementById("offcanvasTopLabel").textContent = pelicula.title;
 
     const overview = document.createElement("p");
@@ -85,8 +83,17 @@ function mostrarDetalles(pelicula) {
     const generos = document.createElement("p");
     generos.textContent = pelicula.genres.map(g => g.name).join(" - ");
 
+    const dropdown = document.getElementById("dropdownInfo");
+    cuerpoOffcanvas.innerHTML = "";
     cuerpoOffcanvas.appendChild(overview);
     cuerpoOffcanvas.appendChild(generos);
+    cuerpoOffcanvas.appendChild(dropdown);
+
+    // Completa el dropdown con la info requerida
+    document.getElementById("anio").textContent = `Año: ${pelicula.release_date.slice(0, 4)}`;
+    document.getElementById("duracion").textContent = `Duración: ${pelicula.runtime} min`;
+    document.getElementById("presupuesto").textContent = `Presupuesto: $${pelicula.budget.toLocaleString()}`;
+    document.getElementById("ganancias").textContent = `Ganancias: $${pelicula.revenue.toLocaleString()}`;
 
     bsOffcanvas.show();
 }
